@@ -1,0 +1,36 @@
+<?php
+
+class CategoryData {
+
+	function create($parentCategoryID, $name, $description) {
+	
+	}
+	
+	function read($ID) {
+	
+	}
+	
+	function readAll() {
+		$categories = array();
+		$this->load->database();
+		$query = $this->db->get('Category');
+		foreach ($query->result() as $row)
+		{
+			echo $row->title;
+			array_push($categories, array('ID' => $row->ID, 'parentCategoryID' => $row->parentCategoryID, 'name' => $row->name, 'description' => $row->description));
+		}
+		$this->db->close();
+		return $categories;
+	}
+	
+	function update($ID, $parentCategoryID, $name, $description) {
+	
+	}
+	
+	function delete($ID) {
+	
+	}
+
+}
+
+?>
