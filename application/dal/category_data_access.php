@@ -4,6 +4,17 @@ class CategoryData {
 
 	function create($parentCategoryID, $name, $description) {
 	
+		$data = array(
+               'parentCategoryID' => $parentCategoryID,
+               'name' => $name,
+               'description' => $description
+            );
+            
+		$this->load->database();
+		$this->db->insert('Category', $data);
+		$affectRows = $this->db->affected_rows();
+		$this->db->close();
+		return $affectRows;
 	}
 	
 	function read($ID) {
@@ -11,7 +22,6 @@ class CategoryData {
 	}
 	
 	function readAll() {
-		$categories = array();
 		$this->load->database();
 		$query = $this->db->get('Category');
 		$this->db->close();

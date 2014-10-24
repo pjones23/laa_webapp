@@ -4,7 +4,9 @@ require_once(APPPATH.'/dal/category_data_access.php');
 class Category {
 
 	function create($parentCategoryID, $name, $description) {
-	
+		$insertedRows = CategoryData::create($parentCategoryID, $name, $description);
+		$success = ($insertedRows == 1) ? true : false;
+		return $success;
 	}
 	
 	function read($ID) {

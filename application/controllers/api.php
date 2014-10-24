@@ -98,17 +98,10 @@ class API extends REST_Controller
      
     function category_post()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $success = Category::create($this->post('parentCategoryID'), $this->post('name'),  $this->post('description'));
+        
+        $message = ($success) ? "Successfully inserted category!" : "Failed to insert category.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function category_put()
