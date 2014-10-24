@@ -83,16 +83,20 @@ class API extends REST_Controller
 
     function category_get()
     {
-        $user = true;
-         
-        if($user)
+        if(!$this->get('id'))
         {
-            $this->response($user, 200); // 200 being the HTTP response code
+        	$this->response(NULL, 400);
         }
- 
+
+        $category = Category::read($this->get('id'));
+    	
+        if($category)
+        {
+            $this->response($category, 200); // 200 being the HTTP response code
+        }
         else
         {
-            $this->response(NULL, 404);
+            $this->response(array('error' => 'Category could not be found'), 404);
         }
     }
      
@@ -106,33 +110,19 @@ class API extends REST_Controller
     
     function category_put()
     {
-        $user = true;
+        $success = Category::update($this->get('id'), $this->put('parentCategoryID'),$this->put('name'), $this->put('description'));
          
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $message = ($success) ? "Successfully updated category!" : "Failed to update category.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function category_delete()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
-    }
+        $success = Category::delete($this->get('id'));
+        
+        $message = ($success) ? "Successfully Deleted category!" : "Did not delete a category.";
+        $this->response($message, 200); // 200 being the HTTP response code
+	}
      
     function categories_get()
     {
