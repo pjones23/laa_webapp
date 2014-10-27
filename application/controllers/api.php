@@ -248,7 +248,7 @@ class API extends REST_Controller
     function contact_put()
     {
         $success = Contact::update($this->get('id'),
-        	$this->put('parentCategoryID'),
+        	$this->put('resourceID'),
         	$this->put('name'),
         	$this->put('email'),
         	$this->put('phone'),
