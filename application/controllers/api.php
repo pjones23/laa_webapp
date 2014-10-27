@@ -199,76 +199,63 @@ class API extends REST_Controller
     
     function contact_get()
     {
-        $user = true;
-         
-        if($user)
+        if(!$this->get('id'))
         {
-            $this->response($user, 200); // 200 being the HTTP response code
+        	$this->response(NULL, 400);
         }
- 
+
+        $contact = Contact::read($this->get('id'));
+    	
+        if($contact)
+        {
+            $this->response($contact, 200); // 200 being the HTTP response code
+        }
         else
         {
-            $this->response(NULL, 404);
+            $this->response(array('error' => 'Contact could not be found'), 404);
         }
     }
      
     function contact_post()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $success = Contact::create($this->post('resourceID'),
+        	$this->post('name'),
+        	$this->post('email'),
+        	$this->post('phone'),
+        	$this->post('description'));
+        
+        $message = ($success) ? "Successfully inserted contact!" : "Failed to insert contact.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function contact_put()
     {
-        $user = true;
+        $success = Contact::update($this->get('id'),
+        	$this->put('parentCategoryID'),
+        	$this->put('name'),
+        	$this->put('email'),
+        	$this->put('phone'),
+        	$this->put('description'));
          
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $message = ($success) ? "Successfully updated contact!" : "Failed to update contact.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function contact_delete()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $success = Contact::delete($this->get('id'));
+        
+        $message = ($success) ? "Successfully Deleted contact!" : "Did not delete a contact.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
      
     function contacts_get()
     {
-        $user = true;
-         
-        if($user)
+        $contacts = Contact::readAll();
+        
+        if($contacts)
         {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
+            $this->response($contacts, 200); // 200 being the HTTP response code
         }
     }
 
