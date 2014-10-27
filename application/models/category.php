@@ -16,7 +16,7 @@ class Category {
 			$category = NULL;
 			$info = $categoryInfo[0];
 
-			$ID = $info->ID + 0; // add 0 to make it a string
+			$ID = $info->ID + 0; // add 0 to make it an integer
 			$parentCategoryID = ($info->parentCategoryID != NULL) ? ($info->parentCategoryID + 0) : 0; // add 0 to make it an int
 			$name = ($info->name != NULL) ? $info->name : "";
 			$description = ($info->description != NULL) ? $info->description : "";
@@ -37,7 +37,7 @@ class Category {
 			foreach ($categoryInfo as $info)
 			{
 			
-				$ID = $info->ID + 0; // add 0 to make it a string
+				$ID = $info->ID + 0; // add 0 to make it an integer
 				$parentCategoryID = ($info->parentCategoryID != NULL) ? ($info->parentCategoryID + 0) : 0; // add 0 to make it an int
 				$name = ($info->name != NULL) ? $info->name : "";
 				$description = ($info->description != NULL) ? $info->description : "";

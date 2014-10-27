@@ -11,14 +11,7 @@ class API extends REST_Controller
         	$this->response(NULL, 400);
         }
 
-        // $user = $this->some_model->getSomething( $this->get('id') );
-    	$users = array(
-			1 => array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com', 'fact' => 'Loves swimming'),
-			2 => array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com', 'fact' => 'Has a huge face'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => 'Is a Scott!', array('hobbies' => array('fartings', 'bikes'))),
-		);
-		
-    	$user = @$users[$this->get('id')];
+		$user = User::read($this->get('id'));
     	
         if($user)
         {
@@ -33,47 +26,31 @@ class API extends REST_Controller
     
     function user_post()
     {
-        //$this->some_model->updateUser( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
+        $success = User::create($this->post('firstName'), $this->post('lastName'), $this->post('email'), $this->post('password'), $this->post('isAdmin'));
         
+        $message = ($success) ? "Successfully inserted user!" : "Failed to insert user.";
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function user_put()
     {
-        $result = $this->user_model->update( $this->post('id'), array(
-            'name' => $this->post('name'),
-            'email' => $this->post('email')
-        ));
-         
-        if($result === FALSE)
-        {
-            $this->response(array('status' => 'failed'));
-        }
-         
-        else
-        {
-            $this->response(array('status' => 'success'));
-        }
-         
+        $success = User::update($this->get('id'), $this->post('firstName'), $this->post('lastName'), $this->post('email'), $this->post('password'), $this->post('isAdmin'));
+        
+        $message = ($success) ? "Successfully updated user!" : "Failed to update user.";
+        $this->response($message, 200); // 200 being the HTTP response code 
     }
     
     function user_delete()
     {
-    	//$this->some_model->deletesomething( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'message' => 'DELETED!');
+    	$success = User::delete($this->get('id'));
         
+        $message = ($success) ? "Successfully Deleted user!" : "Did not delete a user.";
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function users_get()
     {
-        //$users = $this->some_model->getSomething( $this->get('limit') );
-        $users = array(
-			array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
-			array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
-		);
+        $users = User::readAll();
         
         if($users)
         {
@@ -136,76 +113,87 @@ class API extends REST_Controller
     
     function resource_get()
     {
-        $user = true;
-         
-        if($user)
+        if(!$this->get('id'))
         {
-            $this->response($user, 200); // 200 being the HTTP response code
+        	$this->response(NULL, 400);
         }
- 
+
+        $resource = Resource::read($this->get('id'));
+    	
+        if($category)
+        {
+            $this->response($category, 200); // 200 being the HTTP response code
+        }
         else
         {
-            $this->response(NULL, 404);
+            $this->response(array('error' => 'Community resource could not be found'), 404);
         }
     }
      
     function resource_post()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $success = Resource::create($this->post('categoryID'),
+        	$this->post('name'),
+        	$this->post('phone'),
+        	$this->post('email'),
+        	$this->post('address'),
+        	$this->post('city'),
+        	$this->post('$state'),
+        	$this->post('$zip'),
+        	$this->post('$description'),
+        	$this->post('$serviceHours'),
+        	$this->post('$eligibility'),
+        	$this->post('$intakeProcedure'),
+        	$this->post('$documents'),
+        	$this->post('$fees'),
+        	$this->post('$languages'),
+        	$this->post('$services'),
+        	$this->post('$website'));
+        
+        $message = ($success) ? "Successfully inserted community resource!" : "Failed to insert community resource.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function resource_put()
     {
-        $user = true;
+        $success = Resource::update($this->get('id'),
+        	$this->put('categoryID'),
+        	$this->put('name'),
+        	$this->put('phone'),
+        	$this->put('email'),
+        	$this->put('address'),
+        	$this->put('city'),
+        	$this->put('$state'),
+        	$this->put('$zip'),
+        	$this->put('$description'),
+        	$this->put('$serviceHours'),
+        	$this->put('$eligibility'),
+        	$this->put('$intakeProcedure'),
+        	$this->put('$documents'),
+        	$this->put('$fees'),
+        	$this->put('$languages'),
+        	$this->put('$services'),
+        	$this->put('$website'));
          
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $message = ($success) ? "Successfully updated community resource!" : "Failed to update community resource.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
     
     function resource_delete()
     {
-        $user = true;
-         
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
-        }
+        $success = Resource::delete($this->get('id'));
+        
+        $message = ($success) ? "Successfully Deleted community resource!" : "Did not delete a community resource.";
+        $this->response($message, 200); // 200 being the HTTP response code
     }
      
     function resources_get()
     {
-        $user = true;
-         
-        if($user)
+        $resources = Resource::readAll();
+        
+        if($resources)
         {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
- 
-        else
-        {
-            $this->response(NULL, 404);
+            $this->response($resources, 200); // 200 being the HTTP response code
         }
     }
     
