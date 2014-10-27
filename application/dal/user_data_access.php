@@ -2,14 +2,13 @@
 
 class UserData {
 
-	function create($firstName, $lastName, $email, $password, $isAdmin, $isLoggedIn) {
+	function create($firstName, $lastName, $email, $password, $isAdmin) {
 		$data = array(
                'firstName' => $firstName,
                'lastName' => $lastName,
                'email' => $email,
                'password' => $password,
-               'isAdmin' => $isAdmin,
-               'isLoggedIn' => $isLoggedIn
+               'isAdmin' => $isAdmin + 0
             );
             
 		$this->load->database();
@@ -34,13 +33,11 @@ class UserData {
 		return $query->result();
 	}
 	
-	function update($ID, $firstName, $lastName, $email, $isAdmin) {	
+	function update($ID, $firstName, $lastName, $email) {
 		$data = array(
                'firstName' => $firstName,
                'lastName' => $lastName,
-               'email' => $email,
-               'isAdmin' => $isAdmin,
-               'isLoggedIn' => FALSE
+               'email' => $email
             );
             
 		$this->load->database();

@@ -21,7 +21,7 @@ class User {
 			$firstName = ($info->firstName != NULL) ? $info->firstName : "";
 			$lastName = ($info->lastName != NULL) ? $info->lastName : "";
 			$email = ($info->email != NULL) ? $info->email : "";
-			$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : FALSE;
+			$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : 0;
 			$user = array('ID' => $ID,
 				'firstName' => $firstName,
 				'lastName' => $lastName,
@@ -47,7 +47,7 @@ class User {
 				$firstName = ($info->firstName != NULL) ? $info->firstName : "";
 				$lastName = ($info->lastName != NULL) ? $info->lastName : "";
 				$email = ($info->email != NULL) ? $info->email : "";
-				$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : FALSE;
+				$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : 0;
 				array_push($users, array('ID' => $ID,
 					'firstName' => $firstName,
 					'lastName' => $lastName,
@@ -61,8 +61,8 @@ class User {
 		return NULL;
 	}
 	
-	function update($ID, $firstName, $lastName, $email, $isAdmin, $isLoggedIn) {
-		$updatedRows = UserData::update($ID, $firstName, $lastName, $email, $isAdmin, $isLoggedIn);
+	function update($ID, $firstName, $lastName, $email) {
+		$updatedRows = UserData::update($ID, $firstName, $lastName, $email);
 		$success = ($updatedRows == 1) ? true : false;
 		return $success;
 	}

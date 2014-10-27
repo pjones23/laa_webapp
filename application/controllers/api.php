@@ -42,12 +42,10 @@ class API extends REST_Controller
     function user_put()
     {
         $success = User::update($this->get('id'),
-        	$this->post('firstName'),
-        	$this->post('lastName'),
-        	$this->post('email'),
-        	$this->post('password'),
-        	$this->post('isAdmin'));
-        
+        	$this->put('firstName'),
+        	$this->put('lastName'),
+        	$this->put('email'));
+			
         $message = ($success) ? "Successfully updated user!" : "Failed to update user.";
         $this->response($message, 200); // 200 being the HTTP response code 
     }
