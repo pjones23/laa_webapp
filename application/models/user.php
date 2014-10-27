@@ -22,7 +22,11 @@ class User {
 			$lastName = ($info->lastName != NULL) ? $info->lastName : "";
 			$email = ($info->email != NULL) ? $info->email : "";
 			$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : FALSE;
-			$user = array('ID' => $ID, 'firstName' => $firstName, 'lastName' => $lastName, 'email' => $email, 'isAdmin' => $isAdmin);
+			$user = array('ID' => $ID,
+				'firstName' => $firstName,
+				'lastName' => $lastName,
+				'email' => $email,
+				'isAdmin' => $isAdmin);
 
 			if($user != NULL) {
 				return $user;
@@ -44,7 +48,11 @@ class User {
 				$lastName = ($info->lastName != NULL) ? $info->lastName : "";
 				$email = ($info->email != NULL) ? $info->email : "";
 				$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : FALSE;
-				array_push($users, array('ID' => $ID, 'firstName' => $firstName, 'lastName' => $lastName, 'email' => $email, 'isAdmin' => $isAdmin));
+				array_push($users, array('ID' => $ID,
+					'firstName' => $firstName,
+					'lastName' => $lastName,
+					'email' => $email,
+					'isAdmin' => $isAdmin));
 			}
 			if(count($users) > 0) {
 				return $users;

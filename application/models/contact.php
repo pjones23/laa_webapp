@@ -22,7 +22,12 @@ class Contact {
 			$email = ($info->name != NULL) ? $info->name : "";
 			$phone = ($info->phone != NULL) ? $info->phone : "";
 			$description = ($info->description != NULL) ? $info->description : "";
-			$contact = array('ID' => $ID, 'resourceID' => $resourceID, 'name' => $name, 'email' => $email, 'phone' => $phone, 'description' => $description);
+			$contact = array('ID' => $ID,
+				'resourceID' => $resourceID,
+				'name' => $name,
+				'email' => $email,
+				'phone' => $phone,
+				'description' => $description);
 
 			if($contact != NULL) {
 				return $contact;
@@ -45,7 +50,12 @@ class Contact {
 				$email = ($info->name != NULL) ? $info->name : "";
 				$phone = ($info->phone != NULL) ? $info->phone : "";
 				$description = ($info->description != NULL) ? $info->description : "";
-				array_push($contacts, array('ID' => $ID, 'resourceID' => $resourceID, 'name' => $name, 'email' => $email, 'phone' => $phone, 'description' => $description));
+				array_push($contacts, array('ID' => $ID,
+					'resourceID' => $resourceID,
+					'name' => $name,
+					'email' => $email,
+					'phone' => $phone,
+					'description' => $description));
 			}
 			if(count($contacts) > 0) {
 				return $contacts;

@@ -20,7 +20,10 @@ class Category {
 			$parentCategoryID = ($info->parentCategoryID != NULL) ? ($info->parentCategoryID + 0) : 0; // add 0 to make it an int
 			$name = ($info->name != NULL) ? $info->name : "";
 			$description = ($info->description != NULL) ? $info->description : "";
-			$category = array('ID' => $ID, 'parentCategoryID' => $parentCategoryID, 'name' => $name, 'description' => $description );
+			$category = array('ID' => $ID,
+				'parentCategoryID' => $parentCategoryID,
+				'name' => $name,
+				'description' => $description );
 
 			if($category != NULL) {
 				return $category;
@@ -41,7 +44,10 @@ class Category {
 				$parentCategoryID = ($info->parentCategoryID != NULL) ? ($info->parentCategoryID + 0) : 0; // add 0 to make it an int
 				$name = ($info->name != NULL) ? $info->name : "";
 				$description = ($info->description != NULL) ? $info->description : "";
-				array_push($categories, array('ID' => $ID, 'parentCategoryID' => $parentCategoryID, 'name' => $name, 'description' => $description));
+				array_push($categories, array('ID' => $ID,
+					'parentCategoryID' => $parentCategoryID,
+					'name' => $name,
+					'description' => $description));
 			}
 			if(count($categories) > 0) {
 				return $categories;

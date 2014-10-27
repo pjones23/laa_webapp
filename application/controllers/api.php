@@ -26,7 +26,11 @@ class API extends REST_Controller
     
     function user_post()
     {
-        $success = User::create($this->post('firstName'), $this->post('lastName'), $this->post('email'), $this->post('password'), $this->post('isAdmin'));
+        $success = User::create($this->post('firstName'),
+        	$this->post('lastName'),
+        	$this->post('email'),
+        	$this->post('password'),
+        	$this->post('isAdmin'));
         
         $message = ($success) ? "Successfully inserted user!" : "Failed to insert user.";
         $this->response($message, 200); // 200 being the HTTP response code
@@ -34,7 +38,12 @@ class API extends REST_Controller
     
     function user_put()
     {
-        $success = User::update($this->get('id'), $this->post('firstName'), $this->post('lastName'), $this->post('email'), $this->post('password'), $this->post('isAdmin'));
+        $success = User::update($this->get('id'),
+        	$this->post('firstName'),
+        	$this->post('lastName'),
+        	$this->post('email'),
+        	$this->post('password'),
+        	$this->post('isAdmin'));
         
         $message = ($success) ? "Successfully updated user!" : "Failed to update user.";
         $this->response($message, 200); // 200 being the HTTP response code 
@@ -79,7 +88,9 @@ class API extends REST_Controller
      
     function category_post()
     {
-        $success = Category::create($this->post('parentCategoryID'), $this->post('name'),  $this->post('description'));
+        $success = Category::create($this->post('parentCategoryID'),
+        	$this->post('name'),
+        	$this->post('description'));
         
         $message = ($success) ? "Successfully inserted category!" : "Failed to insert category.";
         $this->response($message, 200); // 200 being the HTTP response code
@@ -87,7 +98,10 @@ class API extends REST_Controller
     
     function category_put()
     {
-        $success = Category::update($this->get('id'), $this->put('parentCategoryID'),$this->put('name'), $this->put('description'));
+        $success = Category::update($this->get('id'),
+        	$this->put('parentCategoryID'),
+        	$this->put('name'),
+        	$this->put('description'));
          
         $message = ($success) ? "Successfully updated category!" : "Failed to update category.";
         $this->response($message, 200); // 200 being the HTTP response code
