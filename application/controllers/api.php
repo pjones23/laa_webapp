@@ -1,6 +1,9 @@
 <?php
 require(APPPATH.'/libraries/REST_Controller.php');
 require_once(APPPATH.'/models/category.php');
+require_once(APPPATH.'/models/contact.php');
+require_once(APPPATH.'/models/resource.php');
+require_once(APPPATH.'/models/user.php');
  
 class API extends REST_Controller
 {
@@ -134,9 +137,9 @@ class API extends REST_Controller
 
         $resource = Resource::read($this->get('id'));
     	
-        if($category)
+        if($resource)
         {
-            $this->response($category, 200); // 200 being the HTTP response code
+            $this->response($resource, 200); // 200 being the HTTP response code
         }
         else
         {
@@ -152,17 +155,17 @@ class API extends REST_Controller
         	$this->post('email'),
         	$this->post('address'),
         	$this->post('city'),
-        	$this->post('$state'),
-        	$this->post('$zip'),
-        	$this->post('$description'),
-        	$this->post('$serviceHours'),
-        	$this->post('$eligibility'),
-        	$this->post('$intakeProcedure'),
-        	$this->post('$documents'),
-        	$this->post('$fees'),
-        	$this->post('$languages'),
-        	$this->post('$services'),
-        	$this->post('$website'));
+        	$this->post('state'),
+        	$this->post('zip'),
+        	$this->post('description'),
+        	$this->post('serviceHours'),
+        	$this->post('eligibility'),
+        	$this->post('intakeProcedure'),
+        	$this->post('documents'),
+        	$this->post('fees'),
+        	$this->post('languages'),
+        	$this->post('services'),
+        	$this->post('website'));
         
         $message = ($success) ? "Successfully inserted community resource!" : "Failed to insert community resource.";
         $this->response($message, 200); // 200 being the HTTP response code
@@ -177,17 +180,17 @@ class API extends REST_Controller
         	$this->put('email'),
         	$this->put('address'),
         	$this->put('city'),
-        	$this->put('$state'),
-        	$this->put('$zip'),
-        	$this->put('$description'),
-        	$this->put('$serviceHours'),
-        	$this->put('$eligibility'),
-        	$this->put('$intakeProcedure'),
-        	$this->put('$documents'),
-        	$this->put('$fees'),
-        	$this->put('$languages'),
-        	$this->put('$services'),
-        	$this->put('$website'));
+        	$this->put('state'),
+        	$this->put('zip'),
+        	$this->put('description'),
+        	$this->put('serviceHours'),
+        	$this->put('eligibility'),
+        	$this->put('intakeProcedure'),
+        	$this->put('documents'),
+        	$this->put('fees'),
+        	$this->put('languages'),
+        	$this->put('services'),
+        	$this->put('website'));
          
         $message = ($success) ? "Successfully updated community resource!" : "Failed to update community resource.";
         $this->response($message, 200); // 200 being the HTTP response code

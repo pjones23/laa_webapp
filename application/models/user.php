@@ -4,7 +4,7 @@ require_once(APPPATH.'/dal/user_data_access.php');
 class User {
 
 	function create($firstName, $lastName, $email, $password, $isAdmin) {
-		$securePassword = encryptPassword($password);
+		$securePassword = User::encryptPassword($password);
 		$insertedRows = UserData::create($firstName, $lastName, $email, $securePassword, $isAdmin);
 		$success = ($insertedRows == 1) ? true : false;
 		return $success;

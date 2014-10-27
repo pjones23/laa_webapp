@@ -17,8 +17,10 @@ class Resource {
 			$info = $resourceInfo[0];
 
 			$ID = $info->ID + 0; // add 0 to make it an integer
+			$categoryID = $info->categoryID + 0; // add 0 to make it an integer
 			$name = ($info->name != NULL) ? $info->name : "";
 			$phone = ($info->phone != NULL) ? $info->phone : "";
+			$email = ($info->email != NULL) ? $info->email : "";
 			$address = ($info->address != NULL) ? $info->address : "";
 			$city = ($info->city != NULL) ? $info->city : "";
 			$state = ($info->state != NULL) ? $info->state : "";
@@ -31,7 +33,7 @@ class Resource {
 			$languages = ($info->languages != NULL) ? $info->languages : "";
 			$services = ($info->services != NULL) ? $info->services : "";
 			$website = ($info->website != NULL) ? $info->website : "";
-			$resource = array('categoryID' => $categoryID,
+			$resource = array('ID' => $ID, 'categoryID' => $categoryID,
                'name' => $name,
                'phone' => $phone,
                'email' => $email,
@@ -64,8 +66,10 @@ class Resource {
 			{
 			
 				$ID = $info->ID + 0; // add 0 to make it an integer
+				$categoryID = $info->categoryID + 0; // add 0 to make it an integer
 				$name = ($info->name != NULL) ? $info->name : "";
 				$phone = ($info->phone != NULL) ? $info->phone : "";
+				$email = ($info->email != NULL) ? $info->email : "";
 				$address = ($info->address != NULL) ? $info->address : "";
 				$city = ($info->city != NULL) ? $info->city : "";
 				$state = ($info->state != NULL) ? $info->state : "";
