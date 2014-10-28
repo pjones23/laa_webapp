@@ -7,6 +7,26 @@ require_once(APPPATH.'/models/user.php');
  
 class API extends REST_Controller
 {
+	/**
+	 * @api {get} /user/:id Read data of a user
+	 * @apiName GetUser
+	 * @apiGroup User
+	 *
+	 * @apiParam {Number} id Users unique ID.
+	 *
+	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {String} firstName First name of the User.
+	 * @apiSuccess {String} lastName Last name of the User.
+	 * @apiSuccess {String} email Email address of the User.
+	 * @apiSuccess {Number} isAdmin Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "User could not be found"
+	 *     }
+	 * 
+	 */
 	function user_get()
     {
         if(!$this->get('id'))
@@ -27,6 +47,30 @@ class API extends REST_Controller
         }
     }
     
+	/**
+	 * @api {post} /user Create a new user
+	 * @apiName CreateUser
+	 * @apiGroup User
+	 *
+	 * @apiParam {String} firstName First name of the User.
+	 * @apiParam {String} lastName Last name of the User.
+	 * @apiParam {String} email Email address of the User.
+	 * @apiParam {String} password Password of the User.
+	 * @apiParam {Number} isAdmin Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully inserted user!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to insert user."
+	 *     }
+	 * 
+	 */
     function user_post()
     {
         $success = User::create($this->post('firstName'),
@@ -39,6 +83,29 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {put} /user/:id Update a user
+	 * @apiName UpdateUser
+	 * @apiGroup User
+	 *
+	 * @apiParam {Number} id Users unique ID.
+	 * @apiParam {String} firstName First name of the User.
+	 * @apiParam {String} lastName Last name of the User.
+	 * @apiParam {String} email Email address of the User.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully updated user!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to update user."
+	 *     }
+	 * 
+	 */
     function user_put()
     {
         $success = User::update($this->get('id'),
@@ -50,14 +117,47 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code 
     }
     
+	/**
+	 * @api {delete} /user/:id Read data of a user
+	 * @apiName DeleteUser
+	 * @apiGroup User
+	 *
+	 * @apiParam {Number} id Users unique ID.
+	 *
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully deleted user!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "Failed to delete a user."
+	 *     }
+	 * 
+	 */
     function user_delete()
     {
     	$success = User::delete($this->get('id'));
         
-        $message = ($success) ? "Successfully Deleted user!" : "Did not delete a user.";
+        $message = ($success) ? "Successfully deleted user!" : "Failed to delete a user.";
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {get} /user Read data of all users
+	 * @apiName GetAllUsers
+	 * @apiGroup User
+	 *
+	 *
+	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {String} firstName First name of the User.
+	 * @apiSuccess {String} lastName Last name of the User.
+	 * @apiSuccess {String} email Email address of the User.
+	 * @apiSuccess {Number} isAdmin Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)
+	 * 
+	 */
     function users_get()
     {
         $users = User::readAll();
