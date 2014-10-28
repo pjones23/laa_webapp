@@ -118,7 +118,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /user/:id Read data of a user
+	 * @api {delete} /user/:id Delete a user
 	 * @apiName DeleteUser
 	 * @apiGroup User
 	 *
@@ -168,6 +168,25 @@ class API extends REST_Controller
         }
 	}
 
+	/**
+	 * @api {get} /category/:id Read data of a category
+	 * @apiName GetCategory
+	 * @apiGroup Category
+	 *
+	 * @apiParam {Number} id Category unique ID.
+	 *
+	 * @apiSuccess {Number} ID Category unique ID.
+	 * @apiSuccess {Number} parentCategoryID Unique ID of the parent Category.
+	 * @apiSuccess {String} name Name of the Category.
+	 * @apiSuccess {String} description Description of the Category.
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "Category could not be found"
+	 *     }
+	 * 
+	 */
     function category_get()
     {
         if(!$this->get('id'))
@@ -186,7 +205,29 @@ class API extends REST_Controller
             $this->response(array('error' => 'Category could not be found'), 404);
         }
     }
-     
+
+	/**
+	 * @api {post} /category Create a new category
+	 * @apiName CreateCategory
+	 * @apiGroup Category
+	 *
+	 * @apiParam {Number} parentCategoryID Unique ID of the parent Category.
+	 * @apiParam {String} name Name of the Category.
+	 * @apiParam {String} description Description of the Category.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully inserted category!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to insert category."
+	 *     }
+	 * 
+	 */
     function category_post()
     {
         $success = Category::create($this->post('parentCategoryID'),
@@ -197,6 +238,29 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {put} /category/:id Update a category
+	 * @apiName UpdateCategory
+	 * @apiGroup Category
+	 *
+	 * @apiParam {Number} id Category unique ID.
+	 * @apiParam {Number} parentCategoryID Unique ID of the parent Category.
+	 * @apiParam {String} name Name of the Category.
+	 * @apiParam {String} description Description of the Category.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully updated category!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to update category."
+	 *     }
+	 * 
+	 */
     function category_put()
     {
         $success = Category::update($this->get('id'),
@@ -208,6 +272,26 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {delete} /category/:id Delete a category
+	 * @apiName DeleteCategory
+	 * @apiGroup Category
+	 *
+	 * @apiParam {Number} id Users unique ID.
+	 *
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully deleted user!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "Failed to delete a user."
+	 *     }
+	 * 
+	 */
     function category_delete()
     {
         $success = Category::delete($this->get('id'));
@@ -215,7 +299,18 @@ class API extends REST_Controller
         $message = ($success) ? "Successfully Deleted category!" : "Did not delete a category.";
         $this->response($message, 200); // 200 being the HTTP response code
 	}
-     
+    
+	/**
+	 * @api {get} /categories Read data of all categories
+	 * @apiName GetAllCategories
+	 * @apiGroup Category
+	 *
+	 * @apiSuccess {Number} ID Category unique ID.
+	 * @apiSuccess {Number} parentCategoryID Unique ID of the parent Category.
+	 * @apiSuccess {String} name Name of the Category.
+	 * @apiSuccess {String} description Description of the Category.
+	 * 
+	 */
     function categories_get()
     {
         $categories = Category::readAll();
@@ -312,6 +407,27 @@ class API extends REST_Controller
         }
     }
     
+	/**
+	 * @api {get} /contact/:id Read data of a contact
+	 * @apiName GetContact
+	 * @apiGroup Contact
+	 *
+	 * @apiParam {Number} id Contact unique ID.
+	 *
+	 * @apiSuccess {Number} ID Contact unique ID.
+	 * @apiSuccess {Number} resourceID Resource unique ID which the contact belongs to.
+	 * @apiSuccess {String} name Name of the contact.
+	 * @apiSuccess {String} email Email address of the contact.
+	 * @apiSuccess {String} phone Phone number of the contact.
+	 * @apiSuccess {String} description Description of the contact.
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "User could not be found"
+	 *     }
+	 * 
+	 */
     function contact_get()
     {
         if(!$this->get('id'))
@@ -330,7 +446,31 @@ class API extends REST_Controller
             $this->response(array('error' => 'Contact could not be found'), 404);
         }
     }
-     
+    
+	/**
+	 * @api {post} /contact Create a new contact
+	 * @apiName CreateContact
+	 * @apiGroup Contact
+	 *
+	 * @apiParam {Number} resourceID Resource unique ID which the contact belongs to.
+	 * @apiParam {String} name Name of the contact.
+	 * @apiParam {String} email Email address of the contact.
+	 * @apiParam {String} phone Phone number of the contact.
+	 * @apiParam {String} description Description of the contact.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully inserted contact!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to insert contact."
+	 *     }
+	 * 
+	 */
     function contact_post()
     {
         $success = Contact::create($this->post('resourceID'),
@@ -343,6 +483,31 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {put} /contact/:id Update a contact
+	 * @apiName UpdateContact
+	 * @apiGroup Contact
+	 *
+	 * @apiParam {Number} id Contact unique ID.
+	 * @apiParam {Number} resourceID Resource unique ID which the contact belongs to.
+	 * @apiParam {String} name Name of the contact.
+	 * @apiParam {String} email Email address of the contact.
+	 * @apiParam {String} phone Phone number of the contact.
+	 * @apiParam {String} description Description of the contact.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully updated contact!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to update contact."
+	 *     }
+	 * 
+	 */
     function contact_put()
     {
         $success = Contact::update($this->get('id'),
@@ -356,6 +521,26 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {delete} /contact/:id Delete a contact
+	 * @apiName DeleteContact
+	 * @apiGroup Contact
+	 *
+	 * @apiParam {Number} id Contact unique ID.
+	 *
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully deleted contact!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "Failed to delete a contact."
+	 *     }
+	 * 
+	 */
     function contact_delete()
     {
         $success = Contact::delete($this->get('id'));
@@ -363,7 +548,20 @@ class API extends REST_Controller
         $message = ($success) ? "Successfully Deleted contact!" : "Did not delete a contact.";
         $this->response($message, 200); // 200 being the HTTP response code
     }
-     
+    
+	/**
+	 * @api {get} /contacts Read data of all contacts
+	 * @apiName GetAllContacts
+	 * @apiGroup Contact
+	 *
+	 * @apiSuccess {Number} ID Contact unique ID.
+	 * @apiSuccess {Number} resourceID Resource unique ID which the contact belongs to.
+	 * @apiSuccess {String} name Name of the contact.
+	 * @apiSuccess {String} email Email address of the contact.
+	 * @apiSuccess {String} phone Phone number of the contact.
+	 * @apiSuccess {String} description Description of the contact.
+	 * 
+	 */
     function contacts_get()
     {
         $contacts = Contact::readAll();
@@ -373,6 +571,5 @@ class API extends REST_Controller
             $this->response($contacts, 200); // 200 being the HTTP response code
         }
     }
-
 }
 ?>
