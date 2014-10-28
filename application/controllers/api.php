@@ -12,9 +12,9 @@ class API extends REST_Controller
 	 * @apiName GetUser
 	 * @apiGroup User
 	 *
-	 * @apiParam {Number} id Users unique ID.
+	 * @apiParam {Number} id User unique ID.
 	 *
-	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {Number} ID User unique ID.
 	 * @apiSuccess {String} firstName First name of the User.
 	 * @apiSuccess {String} lastName Last name of the User.
 	 * @apiSuccess {String} email Email address of the User.
@@ -88,7 +88,7 @@ class API extends REST_Controller
 	 * @apiName UpdateUser
 	 * @apiGroup User
 	 *
-	 * @apiParam {Number} id Users unique ID.
+	 * @apiParam {Number} id User unique ID.
 	 * @apiParam {String} firstName First name of the User.
 	 * @apiParam {String} lastName Last name of the User.
 	 * @apiParam {String} email Email address of the User.
@@ -122,7 +122,7 @@ class API extends REST_Controller
 	 * @apiName DeleteUser
 	 * @apiGroup User
 	 *
-	 * @apiParam {Number} id Users unique ID.
+	 * @apiParam {Number} id User unique ID.
 	 *
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
@@ -321,6 +321,37 @@ class API extends REST_Controller
         }
     }
     
+	/**
+	 * @api {get} /resource/id/:id Read data of a community resource
+	 * @apiName GetResource
+	 * @apiGroup Resource
+	 *
+	 * @apiParam {Number} id Resource unique ID.
+	 *
+	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {Number} categoryID Category unique ID which the resource belongs to.
+	 * @apiSuccess {String} name Name of the resource.
+	 * @apiSuccess {String} phone Phone number of the resource.
+	 * @apiSuccess {String} address Street address of the resource.
+	 * @apiSuccess {String} city City of the resource.
+	 * @apiSuccess {String} state State of the resource.
+	 * @apiSuccess {String} zip Zip code of the resource.
+	 * @apiSuccess {String} description Description of the resource.
+	 * @apiSuccess {String} eligibility Eligibility requirements for the resource.
+	 * @apiSuccess {String} intakeProcedure Intake procedure of the resource.
+	 * @apiSuccess {String} documents Documents required by the resource.
+	 * @apiSuccess {String} fees Fees associated with the resource.
+	 * @apiSuccess {String} languages Languages supported by the resource.
+	 * @apiSuccess {String} services Services offered by the resource.
+	 * @apiSuccess {String} website Website of the resource.
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "Resource could not be found"
+	 *     }
+	 * 
+	 */
     function resource_get()
     {
         if(!$this->get('id'))
@@ -339,7 +370,41 @@ class API extends REST_Controller
             $this->response(array('error' => 'Community resource could not be found'), 404);
         }
     }
-     
+    
+	/**
+	 * @api {post} /resource Create a community resource
+	 * @apiName CreateResource
+	 * @apiGroup Resource
+	 *
+	 * @apiParam {Number} categoryID Category unique ID which the resource belongs to.
+	 * @apiParam {String} name Name of the resource.
+	 * @apiParam {String} phone Phone number of the resource.
+	 * @apiParam {String} address Street address of the resource.
+	 * @apiParam {String} city City of the resource.
+	 * @apiParam {String} state State of the resource.
+	 * @apiParam {String} zip Zip code of the resource.
+	 * @apiParam {String} description Description of the resource.
+	 * @apiParam {String} eligibility Eligibility requirements for the resource.
+	 * @apiParam {String} intakeProcedure Intake procedure of the resource.
+	 * @apiParam {String} documents Documents required by the resource.
+	 * @apiParam {String} fees Fees associated with the resource.
+	 * @apiParam {String} languages Languages supported by the resource.
+	 * @apiParam {String} services Services offered by the resource.
+	 * @apiParam {String} website Website of the resource.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully inserted community resource!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to insert community resource."
+	 *     }
+	 * 
+	 */
     function resource_post()
     {
         $success = Resource::create($this->post('categoryID'),
@@ -364,6 +429,41 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {put} /resource/id/:id Update a community resource
+	 * @apiName UpdateResource
+	 * @apiGroup Resource
+	 *
+	 * @apiParam {Number} id Resource unique ID.
+	 * @apiParam {Number} categoryID Category unique ID which the resource belongs to.
+	 * @apiParam {String} name Name of the resource.
+	 * @apiParam {String} phone Phone number of the resource.
+	 * @apiParam {String} address Street address of the resource.
+	 * @apiParam {String} city City of the resource.
+	 * @apiParam {String} state State of the resource.
+	 * @apiParam {String} zip Zip code of the resource.
+	 * @apiParam {String} description Description of the resource.
+	 * @apiParam {String} eligibility Eligibility requirements for the resource.
+	 * @apiParam {String} intakeProcedure Intake procedure of the resource.
+	 * @apiParam {String} documents Documents required by the resource.
+	 * @apiParam {String} fees Fees associated with the resource.
+	 * @apiParam {String} languages Languages supported by the resource.
+	 * @apiParam {String} services Services offered by the resource.
+	 * @apiParam {String} website Website of the resource.
+	 * 
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully updated community resource!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Failed to update community resource."
+	 *     }
+	 * 
+	 */
     function resource_put()
     {
         $success = Resource::update($this->get('id'),
@@ -389,6 +489,26 @@ class API extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
+	/**
+	 * @api {delete} /resource/id/:id Delete a community resource
+	 * @apiName DeleteResource
+	 * @apiGroup Resource
+	 *
+	 * @apiParam {Number} id Resource unique ID.
+	 *
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "Successfully deleted community resource!"
+	 *     }
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "Failed to delete a community resource."
+	 *     }
+	 * 
+	 */
     function resource_delete()
     {
         $success = Resource::delete($this->get('id'));
@@ -396,7 +516,30 @@ class API extends REST_Controller
         $message = ($success) ? "Successfully Deleted community resource!" : "Did not delete a community resource.";
         $this->response($message, 200); // 200 being the HTTP response code
     }
-     
+    
+	/**
+	 * @api {get} /resources Read data of all community resources
+	 * @apiName GetAllResources
+	 * @apiGroup Resource
+	 *
+	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {Number} categoryID Category unique ID which the resource belongs to.
+	 * @apiSuccess {String} name Name of the resource.
+	 * @apiSuccess {String} phone Phone number of the resource.
+	 * @apiSuccess {String} address Street address of the resource.
+	 * @apiSuccess {String} city City of the resource.
+	 * @apiSuccess {String} state State of the resource.
+	 * @apiSuccess {String} zip Zip code of the resource.
+	 * @apiSuccess {String} description Description of the resource.
+	 * @apiSuccess {String} eligibility Eligibility requirements for the resource.
+	 * @apiSuccess {String} intakeProcedure Intake procedure of the resource.
+	 * @apiSuccess {String} documents Documents required by the resource.
+	 * @apiSuccess {String} fees Fees associated with the resource.
+	 * @apiSuccess {String} languages Languages supported by the resource.
+	 * @apiSuccess {String} services Services offered by the resource.
+	 * @apiSuccess {String} website Website of the resource.
+	 * 
+	 */
     function resources_get()
     {
         $resources = Resource::readAll();

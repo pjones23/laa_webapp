@@ -583,6 +583,605 @@
   },
   {
     "type": "post",
+    "url": "/resource",
+    "title": "Create a community resource",
+    "name": "CreateResource",
+    "group": "Resource",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "field": "categoryID",
+            "optional": false,
+            "description": "<p>Category unique ID which the resource belongs to.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "name",
+            "optional": false,
+            "description": "<p>Name of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "phone",
+            "optional": false,
+            "description": "<p>Phone number of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "address",
+            "optional": false,
+            "description": "<p>Street address of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "city",
+            "optional": false,
+            "description": "<p>City of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "state",
+            "optional": false,
+            "description": "<p>State of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "zip",
+            "optional": false,
+            "description": "<p>Zip code of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "description",
+            "optional": false,
+            "description": "<p>Description of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "eligibility",
+            "optional": false,
+            "description": "<p>Eligibility requirements for the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "intakeProcedure",
+            "optional": false,
+            "description": "<p>Intake procedure of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "documents",
+            "optional": false,
+            "description": "<p>Documents required by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "fees",
+            "optional": false,
+            "description": "<p>Fees associated with the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "languages",
+            "optional": false,
+            "description": "<p>Languages supported by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "services",
+            "optional": false,
+            "description": "<p>Services offered by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "website",
+            "optional": false,
+            "description": "<p>Website of the resource.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully inserted community resource!\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to insert community resource.\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "delete",
+    "url": "/resource/id/:id",
+    "title": "Delete a community resource",
+    "name": "DeleteResource",
+    "group": "Resource",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "field": "id",
+            "optional": false,
+            "description": "<p>Resource unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully deleted community resource!\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"Failed to delete a community resource.\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "get",
+    "url": "/resources",
+    "title": "Read data of all community resources",
+    "name": "GetAllResources",
+    "group": "Resource",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>Users unique ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "categoryID",
+            "optional": false,
+            "description": "<p>Category unique ID which the resource belongs to.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "name",
+            "optional": false,
+            "description": "<p>Name of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "phone",
+            "optional": false,
+            "description": "<p>Phone number of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "address",
+            "optional": false,
+            "description": "<p>Street address of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "city",
+            "optional": false,
+            "description": "<p>City of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "state",
+            "optional": false,
+            "description": "<p>State of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "zip",
+            "optional": false,
+            "description": "<p>Zip code of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "description",
+            "optional": false,
+            "description": "<p>Description of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "eligibility",
+            "optional": false,
+            "description": "<p>Eligibility requirements for the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "intakeProcedure",
+            "optional": false,
+            "description": "<p>Intake procedure of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "documents",
+            "optional": false,
+            "description": "<p>Documents required by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "fees",
+            "optional": false,
+            "description": "<p>Fees associated with the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "languages",
+            "optional": false,
+            "description": "<p>Languages supported by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "services",
+            "optional": false,
+            "description": "<p>Services offered by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "website",
+            "optional": false,
+            "description": "<p>Website of the resource.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "get",
+    "url": "/resource/id/:id",
+    "title": "Read data of a community resource",
+    "name": "GetResource",
+    "group": "Resource",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "field": "id",
+            "optional": false,
+            "description": "<p>Resource unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>Users unique ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "categoryID",
+            "optional": false,
+            "description": "<p>Category unique ID which the resource belongs to.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "name",
+            "optional": false,
+            "description": "<p>Name of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "phone",
+            "optional": false,
+            "description": "<p>Phone number of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "address",
+            "optional": false,
+            "description": "<p>Street address of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "city",
+            "optional": false,
+            "description": "<p>City of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "state",
+            "optional": false,
+            "description": "<p>State of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "zip",
+            "optional": false,
+            "description": "<p>Zip code of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "description",
+            "optional": false,
+            "description": "<p>Description of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "eligibility",
+            "optional": false,
+            "description": "<p>Eligibility requirements for the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "intakeProcedure",
+            "optional": false,
+            "description": "<p>Intake procedure of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "documents",
+            "optional": false,
+            "description": "<p>Documents required by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "fees",
+            "optional": false,
+            "description": "<p>Fees associated with the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "languages",
+            "optional": false,
+            "description": "<p>Languages supported by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "services",
+            "optional": false,
+            "description": "<p>Services offered by the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "website",
+            "optional": false,
+            "description": "<p>Website of the resource.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"error\": \"Resource could not be found\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "put",
+    "url": "/resource/id/:id",
+    "title": "Update a community resource",
+    "name": "UpdateResource",
+    "group": "Resource",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "field": "id",
+            "optional": false,
+            "description": "<p>Resource unique ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "field": "categoryID",
+            "optional": false,
+            "description": "<p>Category unique ID which the resource belongs to.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "name",
+            "optional": false,
+            "description": "<p>Name of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "phone",
+            "optional": false,
+            "description": "<p>Phone number of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "address",
+            "optional": false,
+            "description": "<p>Street address of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "city",
+            "optional": false,
+            "description": "<p>City of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "state",
+            "optional": false,
+            "description": "<p>State of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "zip",
+            "optional": false,
+            "description": "<p>Zip code of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "description",
+            "optional": false,
+            "description": "<p>Description of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "eligibility",
+            "optional": false,
+            "description": "<p>Eligibility requirements for the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "intakeProcedure",
+            "optional": false,
+            "description": "<p>Intake procedure of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "documents",
+            "optional": false,
+            "description": "<p>Documents required by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "fees",
+            "optional": false,
+            "description": "<p>Fees associated with the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "languages",
+            "optional": false,
+            "description": "<p>Languages supported by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "services",
+            "optional": false,
+            "description": "<p>Services offered by the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "website",
+            "optional": false,
+            "description": "<p>Website of the resource.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully updated community resource!\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to update community resource.\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "post",
     "url": "/user",
     "title": "Create a new user",
     "name": "CreateUser",
@@ -663,7 +1262,7 @@
             "type": "Number",
             "field": "id",
             "optional": false,
-            "description": "<p>Users unique ID.</p>"
+            "description": "<p>User unique ID.</p>"
           }
         ]
       }
@@ -753,7 +1352,7 @@
             "type": "Number",
             "field": "id",
             "optional": false,
-            "description": "<p>Users unique ID.</p>"
+            "description": "<p>User unique ID.</p>"
           }
         ]
       }
@@ -766,7 +1365,7 @@
             "type": "Number",
             "field": "ID",
             "optional": false,
-            "description": "<p>Users unique ID.</p>"
+            "description": "<p>User unique ID.</p>"
           },
           {
             "group": "Success 200",
@@ -825,7 +1424,7 @@
             "type": "Number",
             "field": "id",
             "optional": false,
-            "description": "<p>Users unique ID.</p>"
+            "description": "<p>User unique ID.</p>"
           },
           {
             "group": "Parameter",
