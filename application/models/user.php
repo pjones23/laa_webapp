@@ -73,6 +73,57 @@ class User {
 		return $success;
 	}
 
+	function readUserByEmail($email){
+		$userInfo = UserData::readUserByEmail($email);
+		if($userInfo != NULL && count($userInfo) > 0)
+		{
+			$user = NULL;
+			$info = $userInfo[0];
+
+			$ID = $info->ID + 0; // add 0 to make it an integer
+			$firstName = ($info->firstName != NULL) ? $info->firstName : "";
+			$lastName = ($info->lastName != NULL) ? $info->lastName : "";
+			$email = ($info->email != NULL) ? $info->email : "";
+			$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : 0;
+			$user = array('ID' => $ID,
+				'firstName' => $firstName,
+				'lastName' => $lastName,
+				'email' => $email,
+				'isAdmin' => $isAdmin);
+
+			if($user != NULL) {
+				return $user;
+			}
+		}
+		return NULL;
+	}
+	
+	function readUserByEmailAndPassword($email, $password){
+		$securePassword = User::encryptPassword($password);
+		$userInfo = UserData::readUserByEmailAndPassword($email, $securePassword);
+		if($userInfo != NULL && count($userInfo) > 0)
+		{
+			$user = NULL;
+			$info = $userInfo[0];
+
+			$ID = $info->ID + 0; // add 0 to make it an integer
+			$firstName = ($info->firstName != NULL) ? $info->firstName : "";
+			$lastName = ($info->lastName != NULL) ? $info->lastName : "";
+			$email = ($info->email != NULL) ? $info->email : "";
+			$isAdmin = ($info->isAdmin != NULL) ? $info->isAdmin : 0;
+			$user = array('ID' => $ID,
+				'firstName' => $firstName,
+				'lastName' => $lastName,
+				'email' => $email,
+				'isAdmin' => $isAdmin);
+
+			if($user != NULL) {
+				return $user;
+			}
+		}
+		return NULL;
+	}
+
 	function encryptPassword($password) {
 		$key = "xqH2VSXmU9esrfD9xKiOam54sk5ydswI";
 		$encryptedPassword = trim(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $key, $password, MCRYPT_MODE_ECB, mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND))));

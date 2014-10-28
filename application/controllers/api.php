@@ -167,6 +167,87 @@ class API extends REST_Controller
             $this->response($users, 200); // 200 being the HTTP response code
         }
 	}
+	
+	/**
+	 * @api {post} api/userByEmail Read data of a user searched by email
+	 * @apiName GetUserByEmail
+	 * @apiGroup User
+	 *
+	 * @apiParam {String} email User unique email.
+	 *
+	 * @apiSuccess {Number} ID User unique ID.
+	 * @apiSuccess {String} firstName First name of the User.
+	 * @apiSuccess {String} lastName Last name of the User.
+	 * @apiSuccess {String} email Email address of the User.
+	 * @apiSuccess {Number} isAdmin Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "User could not be found"
+	 *     }
+	 * 
+	 */
+	function userByEmail_post()
+    {
+        if(!$this->post('email'))
+        {
+        	$this->response(NULL, 400);
+        }
+
+		$user = User::readUserByEmail($this->post('email'));
+    	
+        if($user)
+        {
+            $this->response($user, 200); // 200 being the HTTP response code
+        }
+
+        else
+        {
+            $this->response(array('error' => 'User could not be found'), 404);
+        }
+    }
+	
+	/**
+	 * @api {post} api/userByPassword Read data of a user searched by email and password
+	 * @apiName GetUserByPassword
+	 * @apiGroup User
+	 *
+	 * @apiParam {String} email User unique email.
+	 * @apiParam {String} email User password.
+	 *
+	 * @apiSuccess {Number} ID User unique ID.
+	 * @apiSuccess {String} firstName First name of the User.
+	 * @apiSuccess {String} lastName Last name of the User.
+	 * @apiSuccess {String} email Email address of the User.
+	 * @apiSuccess {Number} isAdmin Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "User could not be found"
+	 *     }
+	 * 
+	 */
+	function userByPassword_post()
+    {
+        if(!$this->post('email') || !$this->post('password'))
+        {
+        	$this->response(NULL, 400);
+        }
+
+		$user = User::readUserByEmailAndPassword($this->post('email'), $this->post('password'));
+    	
+        if($user)
+        {
+            $this->response($user, 200); // 200 being the HTTP response code
+        }
+
+        else
+        {
+            $this->response(array('error' => 'User could not be found'), 404);
+        }
+    }
 
 	/**
 	 * @api {get} api/category/id/:id Read data of a category

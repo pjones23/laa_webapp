@@ -56,6 +56,23 @@ class UserData {
 		$this->db->close();
 		return $affectRows;
 	}
+	
+	function readUserByEmail($email){
+		$this->load->database();
+		$this->db->where('email', $email);
+		$query = $this->db->get('User');
+		$this->db->close();
+		return $query->result();
+	}
+	
+	function readUserByEmailAndPassword($email, $password){
+		$this->load->database();
+		$this->db->where('email', $email);
+		$this->db->where('password', $password);
+		$query = $this->db->get('User');
+		$this->db->close();
+		return $query->result();
+	}
 }
 
 ?>
