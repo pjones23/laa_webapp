@@ -214,7 +214,7 @@ class API extends REST_Controller
 	 * @apiGroup User
 	 *
 	 * @apiParam {String} email User unique email.
-	 * @apiParam {String} email User password.
+	 * @apiParam {String} password User password.
 	 *
 	 * @apiSuccess {Number} ID User unique ID.
 	 * @apiSuccess {String} firstName First name of the User.

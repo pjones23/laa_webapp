@@ -1411,6 +1411,157 @@ define({ api: [
     "filename": "./api.php"
   },
   {
+    "type": "post",
+    "url": "api/userByEmail",
+    "title": "Read data of a user searched by email",
+    "name": "GetUserByEmail",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>User unique email.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>User unique ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "firstName",
+            "optional": false,
+            "description": "<p>First name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "lastName",
+            "optional": false,
+            "description": "<p>Last name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>Email address of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "isAdmin",
+            "optional": false,
+            "description": "<p>Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"error\": \"User could not be found\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "post",
+    "url": "api/userByPassword",
+    "title": "Read data of a user searched by email and password",
+    "name": "GetUserByPassword",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>User unique email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "password",
+            "optional": false,
+            "description": "<p>User password.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>User unique ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "firstName",
+            "optional": false,
+            "description": "<p>First name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "lastName",
+            "optional": false,
+            "description": "<p>Last name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>Email address of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "isAdmin",
+            "optional": false,
+            "description": "<p>Whether the User is an Administrator or not (1 = TRUE | 0 = FALSE)</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"error\": \"User could not be found\"\n   }\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
     "type": "put",
     "url": "api/user/id/:id",
     "title": "Update a user",
