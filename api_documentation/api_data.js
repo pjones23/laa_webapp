@@ -1,7 +1,7 @@
 define({ api: [
   {
     "type": "post",
-    "url": "/api/category",
+    "url": "api/category",
     "title": "Create a new category",
     "name": "CreateCategory",
     "group": "Category",
@@ -55,7 +55,7 @@ define({ api: [
   },
   {
     "type": "delete",
-    "url": "/api/category/id/:id",
+    "url": "api/category/id/:id",
     "title": "Delete a category",
     "name": "DeleteCategory",
     "group": "Category",
@@ -95,7 +95,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/categories",
+    "url": "api/categories",
     "title": "Read data of all categories",
     "name": "GetAllCategories",
     "group": "Category",
@@ -138,7 +138,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/category/id/:id",
+    "url": "api/category/id/:id",
     "title": "Read data of a category",
     "name": "GetCategory",
     "group": "Category",
@@ -203,7 +203,7 @@ define({ api: [
   },
   {
     "type": "put",
-    "url": "/api/category/id/:id",
+    "url": "api/category/id/:id",
     "title": "Update a category",
     "name": "UpdateCategory",
     "group": "Category",
@@ -264,7 +264,7 @@ define({ api: [
   },
   {
     "type": "post",
-    "url": "/api/contact",
+    "url": "api/contact",
     "title": "Create a new contact",
     "name": "CreateContact",
     "group": "Contact",
@@ -332,7 +332,7 @@ define({ api: [
   },
   {
     "type": "delete",
-    "url": "/api/contact/id/:id",
+    "url": "api/contact/id/:id",
     "title": "Delete a contact",
     "name": "DeleteContact",
     "group": "Contact",
@@ -372,7 +372,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/contacts",
+    "url": "api/contacts",
     "title": "Read data of all contacts",
     "name": "GetAllContacts",
     "group": "Contact",
@@ -429,7 +429,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/contact/id/:id",
+    "url": "api/contact/id/:id",
     "title": "Read data of a contact",
     "name": "GetContact",
     "group": "Contact",
@@ -508,7 +508,7 @@ define({ api: [
   },
   {
     "type": "put",
-    "url": "/api/contact/id/:id",
+    "url": "api/contact/id/:id",
     "title": "Update a contact",
     "name": "UpdateContact",
     "group": "Contact",
@@ -583,7 +583,7 @@ define({ api: [
   },
   {
     "type": "post",
-    "url": "/api/resource",
+    "url": "api/resource",
     "title": "Create a community resource",
     "name": "CreateResource",
     "group": "Resource",
@@ -721,7 +721,7 @@ define({ api: [
   },
   {
     "type": "delete",
-    "url": "/api/resource/id/:id",
+    "url": "api/resource/id/:id",
     "title": "Delete a community resource",
     "name": "DeleteResource",
     "group": "Resource",
@@ -761,7 +761,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/resources",
+    "url": "api/resources",
     "title": "Read data of all community resources",
     "name": "GetAllResources",
     "group": "Resource",
@@ -888,7 +888,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/resource/id/:id",
+    "url": "api/resource/id/:id",
     "title": "Read data of a community resource",
     "name": "GetResource",
     "group": "Resource",
@@ -1037,7 +1037,7 @@ define({ api: [
   },
   {
     "type": "put",
-    "url": "/api/resource/id/:id",
+    "url": "api/resource/id/:id",
     "title": "Update a community resource",
     "name": "UpdateResource",
     "group": "Resource",
@@ -1182,7 +1182,7 @@ define({ api: [
   },
   {
     "type": "post",
-    "url": "/api/user",
+    "url": "api/user",
     "title": "Create a new user",
     "name": "CreateUser",
     "group": "User",
@@ -1250,7 +1250,7 @@ define({ api: [
   },
   {
     "type": "delete",
-    "url": "/api/user/id/:id",
+    "url": "api/user/id/:id",
     "title": "Delete a user",
     "name": "DeleteUser",
     "group": "User",
@@ -1290,7 +1290,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/user",
+    "url": "api/user",
     "title": "Read data of all users",
     "name": "GetAllUsers",
     "group": "User",
@@ -1340,7 +1340,7 @@ define({ api: [
   },
   {
     "type": "get",
-    "url": "/api/user/id/:id",
+    "url": "api/user/id/:id",
     "title": "Read data of a user",
     "name": "GetUser",
     "group": "User",
@@ -1412,7 +1412,7 @@ define({ api: [
   },
   {
     "type": "put",
-    "url": "/api/user/id/:id",
+    "url": "api/user/id/:id",
     "title": "Update a user",
     "name": "UpdateUser",
     "group": "User",
