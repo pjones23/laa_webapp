@@ -8,7 +8,7 @@ require_once(APPPATH.'/models/user.php');
 class API extends REST_Controller
 {
 	/**
-	 * @api {get} /user/id/:id Read data of a user
+	 * @api {get} /api/user/id/:id Read data of a user
 	 * @apiName GetUser
 	 * @apiGroup User
 	 *
@@ -48,7 +48,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {post} /user Create a new user
+	 * @api {post} /api/user Create a new user
 	 * @apiName CreateUser
 	 * @apiGroup User
 	 *
@@ -84,7 +84,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /user/id/:id Update a user
+	 * @api {put} /api/user/id/:id Update a user
 	 * @apiName UpdateUser
 	 * @apiGroup User
 	 *
@@ -118,7 +118,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /user/id/:id Delete a user
+	 * @api {delete} /api/user/id/:id Delete a user
 	 * @apiName DeleteUser
 	 * @apiGroup User
 	 *
@@ -146,7 +146,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /user Read data of all users
+	 * @api {get} /api/user Read data of all users
 	 * @apiName GetAllUsers
 	 * @apiGroup User
 	 *
@@ -169,7 +169,7 @@ class API extends REST_Controller
 	}
 
 	/**
-	 * @api {get} /category/id/:id Read data of a category
+	 * @api {get} /api/category/id/:id Read data of a category
 	 * @apiName GetCategory
 	 * @apiGroup Category
 	 *
@@ -207,7 +207,7 @@ class API extends REST_Controller
     }
 
 	/**
-	 * @api {post} /category Create a new category
+	 * @api {post} /api/category Create a new category
 	 * @apiName CreateCategory
 	 * @apiGroup Category
 	 *
@@ -239,7 +239,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /category/id/:id Update a category
+	 * @api {put} /api/category/id/:id Update a category
 	 * @apiName UpdateCategory
 	 * @apiGroup Category
 	 *
@@ -273,7 +273,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /category/id/:id Delete a category
+	 * @api {delete} /api/category/id/:id Delete a category
 	 * @apiName DeleteCategory
 	 * @apiGroup Category
 	 *
@@ -301,7 +301,7 @@ class API extends REST_Controller
 	}
     
 	/**
-	 * @api {get} /categories Read data of all categories
+	 * @api {get} /api/categories Read data of all categories
 	 * @apiName GetAllCategories
 	 * @apiGroup Category
 	 *
@@ -322,7 +322,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /resource/id/:id Read data of a community resource
+	 * @api {get} /api/resource/id/:id Read data of a community resource
 	 * @apiName GetResource
 	 * @apiGroup Resource
 	 *
@@ -372,7 +372,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {post} /resource Create a community resource
+	 * @api {post} /api/resource Create a community resource
 	 * @apiName CreateResource
 	 * @apiGroup Resource
 	 *
@@ -430,7 +430,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /resource/id/:id Update a community resource
+	 * @api {put} /api/resource/id/:id Update a community resource
 	 * @apiName UpdateResource
 	 * @apiGroup Resource
 	 *
@@ -490,7 +490,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /resource/id/:id Delete a community resource
+	 * @api {delete} /api/resource/id/:id Delete a community resource
 	 * @apiName DeleteResource
 	 * @apiGroup Resource
 	 *
@@ -518,7 +518,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /resources Read data of all community resources
+	 * @api {get} /api/resources Read data of all community resources
 	 * @apiName GetAllResources
 	 * @apiGroup Resource
 	 *
@@ -551,7 +551,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /contact/id/:id Read data of a contact
+	 * @api {get} /api/contact/id/:id Read data of a contact
 	 * @apiName GetContact
 	 * @apiGroup Contact
 	 *
@@ -591,7 +591,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {post} /contact Create a new contact
+	 * @api {post} /api/contact Create a new contact
 	 * @apiName CreateContact
 	 * @apiGroup Contact
 	 *
@@ -627,7 +627,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /contact/id/:id Update a contact
+	 * @api {put} /api/contact/id/:id Update a contact
 	 * @apiName UpdateContact
 	 * @apiGroup Contact
 	 *
@@ -665,7 +665,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /contact/id/:id Delete a contact
+	 * @api {delete} /api/contact/id/:id Delete a contact
 	 * @apiName DeleteContact
 	 * @apiGroup Contact
 	 *
@@ -693,7 +693,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /contacts Read data of all contacts
+	 * @api {get} /api/contacts Read data of all contacts
 	 * @apiName GetAllContacts
 	 * @apiGroup Contact
 	 *
