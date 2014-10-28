@@ -8,7 +8,7 @@ require_once(APPPATH.'/models/user.php');
 class API extends REST_Controller
 {
 	/**
-	 * @api {get} /user/:id Read data of a user
+	 * @api {get} /user/id/:id Read data of a user
 	 * @apiName GetUser
 	 * @apiGroup User
 	 *
@@ -84,7 +84,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /user/:id Update a user
+	 * @api {put} /user/id/:id Update a user
 	 * @apiName UpdateUser
 	 * @apiGroup User
 	 *
@@ -118,7 +118,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /user/:id Delete a user
+	 * @api {delete} /user/id/:id Delete a user
 	 * @apiName DeleteUser
 	 * @apiGroup User
 	 *
@@ -169,7 +169,7 @@ class API extends REST_Controller
 	}
 
 	/**
-	 * @api {get} /category/:id Read data of a category
+	 * @api {get} /category/id/:id Read data of a category
 	 * @apiName GetCategory
 	 * @apiGroup Category
 	 *
@@ -239,7 +239,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /category/:id Update a category
+	 * @api {put} /category/id/:id Update a category
 	 * @apiName UpdateCategory
 	 * @apiGroup Category
 	 *
@@ -273,7 +273,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /category/:id Delete a category
+	 * @api {delete} /category/id/:id Delete a category
 	 * @apiName DeleteCategory
 	 * @apiGroup Category
 	 *
@@ -408,7 +408,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {get} /contact/:id Read data of a contact
+	 * @api {get} /contact/id/:id Read data of a contact
 	 * @apiName GetContact
 	 * @apiGroup Contact
 	 *
@@ -484,7 +484,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {put} /contact/:id Update a contact
+	 * @api {put} /contact/id/:id Update a contact
 	 * @apiName UpdateContact
 	 * @apiGroup Contact
 	 *
@@ -522,7 +522,7 @@ class API extends REST_Controller
     }
     
 	/**
-	 * @api {delete} /contact/:id Delete a contact
+	 * @api {delete} /contact/id/:id Delete a contact
 	 * @apiName DeleteContact
 	 * @apiGroup Contact
 	 *

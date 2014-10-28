@@ -55,7 +55,7 @@
   },
   {
     "type": "delete",
-    "url": "/category/:id",
+    "url": "/category/id/:id",
     "title": "Delete a category",
     "name": "DeleteCategory",
     "group": "Category",
@@ -138,7 +138,7 @@
   },
   {
     "type": "get",
-    "url": "/category/:id",
+    "url": "/category/id/:id",
     "title": "Read data of a category",
     "name": "GetCategory",
     "group": "Category",
@@ -203,7 +203,7 @@
   },
   {
     "type": "put",
-    "url": "/category/:id",
+    "url": "/category/id/:id",
     "title": "Update a category",
     "name": "UpdateCategory",
     "group": "Category",
@@ -332,7 +332,7 @@
   },
   {
     "type": "delete",
-    "url": "/contact/:id",
+    "url": "/contact/id/:id",
     "title": "Delete a contact",
     "name": "DeleteContact",
     "group": "Contact",
@@ -429,7 +429,7 @@
   },
   {
     "type": "get",
-    "url": "/contact/:id",
+    "url": "/contact/id/:id",
     "title": "Read data of a contact",
     "name": "GetContact",
     "group": "Contact",
@@ -508,7 +508,7 @@
   },
   {
     "type": "put",
-    "url": "/contact/:id",
+    "url": "/contact/id/:id",
     "title": "Update a contact",
     "name": "UpdateContact",
     "group": "Contact",
@@ -651,7 +651,7 @@
   },
   {
     "type": "delete",
-    "url": "/user/:id",
+    "url": "/user/id/:id",
     "title": "Delete a user",
     "name": "DeleteUser",
     "group": "User",
@@ -741,7 +741,7 @@
   },
   {
     "type": "get",
-    "url": "/user/:id",
+    "url": "/user/id/:id",
     "title": "Read data of a user",
     "name": "GetUser",
     "group": "User",
@@ -813,7 +813,7 @@
   },
   {
     "type": "put",
-    "url": "/user/:id",
+    "url": "/user/id/:id",
     "title": "Update a user",
     "name": "UpdateUser",
     "group": "User",
