@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 require(APPPATH.'/libraries/REST_Controller.php');
 require_once(APPPATH.'/models/category.php');
 require_once(APPPATH.'/models/contact.php');
