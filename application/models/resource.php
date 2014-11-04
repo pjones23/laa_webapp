@@ -26,6 +26,7 @@ class Resource {
 			$state = ($info->state != NULL) ? $info->state : "";
 			$zip = ($info->zip != NULL) ? $info->zip : "";
 			$description = ($info->description != NULL) ? $info->description : "";
+			$serviceHours = ($info->serviceHours != NULL) ? $info->serviceHours : "";
 			$eligibility = ($info->eligibility != NULL) ? $info->eligibility : "";
 			$intakeProcedure = ($info->intakeProcedure != NULL) ? $info->intakeProcedure : "";
 			$documents = ($info->documents != NULL) ? $info->documents : "";
@@ -42,6 +43,7 @@ class Resource {
                'state' => $state,
                'zip' => $zip,
                'description' => $description,
+               'serviceHours' => $serviceHours,
                'eligibility' => $eligibility,
                'intakeProcedure' => $intakeProcedure,
                'documents' => $documents,
@@ -75,6 +77,7 @@ class Resource {
 				$state = ($info->state != NULL) ? $info->state : "";
 				$zip = ($info->zip != NULL) ? $info->zip : "";
 				$description = ($info->description != NULL) ? $info->description : "";
+				$serviceHours = ($info->serviceHours != NULL) ? $info->serviceHours : "";
 				$eligibility = ($info->eligibility != NULL) ? $info->eligibility : "";
 				$intakeProcedure = ($info->intakeProcedure != NULL) ? $info->intakeProcedure : "";
 				$documents = ($info->documents != NULL) ? $info->documents : "";
@@ -91,6 +94,7 @@ class Resource {
 	               'state' => $state,
 	               'zip' => $zip,
 	               'description' => $description,
+	               'serviceHours' => $serviceHours,
 	               'eligibility' => $eligibility,
 	               'intakeProcedure' => $intakeProcedure,
 	               'documents' => $documents,

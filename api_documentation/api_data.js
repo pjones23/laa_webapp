@@ -649,6 +649,13 @@ define({ api: [
           {
             "group": "Parameter",
             "type": "String",
+            "field": "serviceHours",
+            "optional": false,
+            "description": "<p>Service hours of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
             "field": "eligibility",
             "optional": false,
             "description": "<p>Eligibility requirements for the resource.</p>"
@@ -834,6 +841,13 @@ define({ api: [
           {
             "group": "Success 200",
             "type": "String",
+            "field": "serviceHours",
+            "optional": false,
+            "description": "<p>Service hours of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "field": "eligibility",
             "optional": false,
             "description": "<p>Eligibility requirements for the resource.</p>"
@@ -974,6 +988,13 @@ define({ api: [
           {
             "group": "Success 200",
             "type": "String",
+            "field": "serviceHours",
+            "optional": false,
+            "description": "<p>Service hours of the resource.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "field": "eligibility",
             "optional": false,
             "description": "<p>Eligibility requirements for the resource.</p>"
@@ -1106,6 +1127,13 @@ define({ api: [
             "field": "description",
             "optional": false,
             "description": "<p>Description of the resource.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "field": "serviceHours",
+            "optional": false,
+            "description": "<p>Service hours of the resource.</p>"
           },
           {
             "group": "Parameter",

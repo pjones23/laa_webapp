@@ -419,6 +419,7 @@ class API extends REST_Controller
 	 * @apiSuccess {String} state State of the resource.
 	 * @apiSuccess {String} zip Zip code of the resource.
 	 * @apiSuccess {String} description Description of the resource.
+	 * @apiSuccess {String} serviceHours Service hours of the resource.
 	 * @apiSuccess {String} eligibility Eligibility requirements for the resource.
 	 * @apiSuccess {String} intakeProcedure Intake procedure of the resource.
 	 * @apiSuccess {String} documents Documents required by the resource.
@@ -466,6 +467,7 @@ class API extends REST_Controller
 	 * @apiParam {String} state State of the resource.
 	 * @apiParam {String} zip Zip code of the resource.
 	 * @apiParam {String} description Description of the resource.
+	 * @apiParam {String} serviceHours Service hours of the resource.
 	 * @apiParam {String} eligibility Eligibility requirements for the resource.
 	 * @apiParam {String} intakeProcedure Intake procedure of the resource.
 	 * @apiParam {String} documents Documents required by the resource.
@@ -525,6 +527,7 @@ class API extends REST_Controller
 	 * @apiParam {String} state State of the resource.
 	 * @apiParam {String} zip Zip code of the resource.
 	 * @apiParam {String} description Description of the resource.
+	 * @apiParam {String} serviceHours Service hours of the resource.
 	 * @apiParam {String} eligibility Eligibility requirements for the resource.
 	 * @apiParam {String} intakeProcedure Intake procedure of the resource.
 	 * @apiParam {String} documents Documents required by the resource.
@@ -613,6 +616,7 @@ class API extends REST_Controller
 	 * @apiSuccess {String} state State of the resource.
 	 * @apiSuccess {String} zip Zip code of the resource.
 	 * @apiSuccess {String} description Description of the resource.
+	 * @apiSuccess {String} serviceHours Service hours of the resource.
 	 * @apiSuccess {String} eligibility Eligibility requirements for the resource.
 	 * @apiSuccess {String} intakeProcedure Intake procedure of the resource.
 	 * @apiSuccess {String} documents Documents required by the resource.
