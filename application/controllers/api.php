@@ -62,13 +62,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully inserted user!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully inserted user!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to insert user."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to insert user."
 	 *     }
 	 * 
 	 */
@@ -80,7 +82,7 @@ class API extends REST_Controller
         	$this->post('password'),
         	$this->post('isAdmin'));
         
-        $message = ($success) ? "Successfully inserted user!" : "Failed to insert user.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully inserted user!") : array("return_code" => 1, "message" => "Failed to insert user.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -97,13 +99,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully updated user!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully updated user!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to update user."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to update user."
 	 *     }
 	 * 
 	 */
@@ -114,7 +118,7 @@ class API extends REST_Controller
         	$this->put('lastName'),
         	$this->put('email'));
 			
-        $message = ($success) ? "Successfully updated user!" : "Failed to update user.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully updated user!") : array("return_code" => 1, "message" => "Failed to update user.");
         $this->response($message, 200); // 200 being the HTTP response code 
     }
     
@@ -128,13 +132,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully deleted user!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully deleted user!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 404 Not Found
 	 *     {
-	 *       "Failed to delete a user."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to delete user."
 	 *     }
 	 * 
 	 */
@@ -142,7 +148,7 @@ class API extends REST_Controller
     {
     	$success = User::delete($this->get('id'));
         
-        $message = ($success) ? "Successfully deleted user!" : "Failed to delete a user.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully deleted user!") : array("return_code" => 1, "message" => "Failed to delete user.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -300,13 +306,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully inserted category!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully inserted category!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to insert category."
+	 * 		 "return_code": 1,
+	 *       "message": "Failed to insert category."
 	 *     }
 	 * 
 	 */
@@ -316,7 +324,7 @@ class API extends REST_Controller
         	$this->post('name'),
         	$this->post('description'));
         
-        $message = ($success) ? "Successfully inserted category!" : "Failed to insert category.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully inserted category!") : array("return_code" => 1, "message" => "Failed to insert category.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -333,13 +341,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully updated category!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully updated category!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to update category."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to update category."
 	 *     }
 	 * 
 	 */
@@ -350,7 +360,7 @@ class API extends REST_Controller
         	$this->put('name'),
         	$this->put('description'));
          
-        $message = ($success) ? "Successfully updated category!" : "Failed to update category.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully updated category!") : array("return_code" => 1, "message" => "Failed to update category.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -364,13 +374,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully deleted user!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully deleted category!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 404 Not Found
 	 *     {
-	 *       "Failed to delete a user."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to delete category."
 	 *     }
 	 * 
 	 */
@@ -378,7 +390,7 @@ class API extends REST_Controller
     {
         $success = Category::delete($this->get('id'));
         
-        $message = ($success) ? "Successfully Deleted category!" : "Did not delete a category.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully deleted category!") : array("return_code" => 1, "message" => "Failed to delete category.");
         $this->response($message, 200); // 200 being the HTTP response code
 	}
     
@@ -479,13 +491,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully inserted community resource!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully inserted community resource!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to insert community resource."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to insert community resource."
 	 *     }
 	 * 
 	 */
@@ -509,7 +523,7 @@ class API extends REST_Controller
         	$this->post('services'),
         	$this->post('website'));
         
-        $message = ($success) ? "Successfully inserted community resource!" : "Failed to insert community resource.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully inserted community resource!") : array("return_code" => 1, "message" => "Failed to insert community resource.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -539,13 +553,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully updated community resource!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully updated community resource!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to update community resource."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to update community resource."
 	 *     }
 	 * 
 	 */
@@ -570,7 +586,7 @@ class API extends REST_Controller
         	$this->put('services'),
         	$this->put('website'));
          
-        $message = ($success) ? "Successfully updated community resource!" : "Failed to update community resource.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully updated community resource!") : array("return_code" => 1, "message" => "Failed to update community resource.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -584,13 +600,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully deleted community resource!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully deleted community resource!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 404 Not Found
 	 *     {
-	 *       "Failed to delete a community resource."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to delete community resource."
 	 *     }
 	 * 
 	 */
@@ -598,7 +616,7 @@ class API extends REST_Controller
     {
         $success = Resource::delete($this->get('id'));
         
-        $message = ($success) ? "Successfully Deleted community resource!" : "Did not delete a community resource.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully deleted community resource!") : array("return_code" => 1, "message" => "Failed to delete community resource.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -690,13 +708,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully inserted contact!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully inserted contact!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to insert contact."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to insert contact."
 	 *     }
 	 * 
 	 */
@@ -708,7 +728,7 @@ class API extends REST_Controller
         	$this->post('phone'),
         	$this->post('description'));
         
-        $message = ($success) ? "Successfully inserted contact!" : "Failed to insert contact.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully inserted contact!") : array("return_code" => 1, "message" => "Failed to insert contact.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -727,13 +747,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully updated contact!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully updated contact!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Failed to update contact."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to update contact."
 	 *     }
 	 * 
 	 */
@@ -746,7 +768,7 @@ class API extends REST_Controller
         	$this->put('phone'),
         	$this->put('description'));
          
-        $message = ($success) ? "Successfully updated contact!" : "Failed to update contact.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully updated contact!") : array("return_code" => 1, "message" => "Failed to update contact.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
@@ -760,13 +782,15 @@ class API extends REST_Controller
 	 * @apiSuccessExample Success-Response:
 	 *     HTTP/1.1 200 OK
 	 *     {
-	 *       "Successfully deleted contact!"
+	 *       "return_code": 0,
+	 * 		 "message": "Successfully deleted contact!"
 	 *     }
 	 * 
 	 * @apiErrorExample Error-Response:
 	 *     HTTP/1.1 404 Not Found
 	 *     {
-	 *       "Failed to delete a contact."
+	 *       "return_code": 1,
+	 * 		 "message": "Failed to delete a contact."
 	 *     }
 	 * 
 	 */
@@ -774,7 +798,7 @@ class API extends REST_Controller
     {
         $success = Contact::delete($this->get('id'));
         
-        $message = ($success) ? "Successfully Deleted contact!" : "Did not delete a contact.";
+        $message = ($success) ? array("return_code" => 0, "message" => "Successfully deleted contact!") : array("return_code" => 1, "message" => "Failed to delete contact.");
         $this->response($message, 200); // 200 being the HTTP response code
     }
     

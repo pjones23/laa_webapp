@@ -36,7 +36,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully inserted category!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully inserted category!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -45,7 +45,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to insert category.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n\t \"return_code\": 1,\n     \"message\": \"Failed to insert category.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -76,7 +76,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully deleted user!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully deleted category!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -85,7 +85,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"Failed to delete a user.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to delete category.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -245,7 +245,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully updated category!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully updated category!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -254,7 +254,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to update category.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to update category.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -313,7 +313,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully inserted contact!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully inserted contact!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -322,7 +322,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to insert contact.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to insert contact.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -353,7 +353,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully deleted contact!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully deleted contact!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -362,7 +362,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"Failed to delete a contact.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to delete a contact.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -564,7 +564,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully updated contact!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully updated contact!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -573,7 +573,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to update contact.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to update contact.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -709,7 +709,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully inserted community resource!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully inserted community resource!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -718,7 +718,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to insert community resource.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to insert community resource.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -749,7 +749,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully deleted community resource!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully deleted community resource!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -758,7 +758,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"Failed to delete a community resource.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to delete community resource.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1191,7 +1191,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully updated community resource!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully updated community resource!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1200,7 +1200,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to update community resource.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to update community resource.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1259,7 +1259,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully inserted user!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully inserted user!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1268,7 +1268,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to insert user.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to insert user.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1299,7 +1299,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully deleted user!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully deleted user!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1308,7 +1308,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"Failed to delete a user.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 404 Not Found\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to delete user.\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1633,7 +1633,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Successfully updated user!\"\n   }\n",
+          "content": "Success-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 0,\n\t \"message\": \"Successfully updated user!\"\n   }\n",
           "type": "json"
         }
       ]
@@ -1642,7 +1642,7 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"Failed to update user.\"\n   }\n",
+          "content": "Error-Response:\n   HTTP/1.1 200 OK\n   {\n     \"return_code\": 1,\n\t \"message\": \"Failed to update user.\"\n   }\n",
           "type": "json"
         }
       ]
