@@ -10,7 +10,7 @@ class API extends REST_Controller
 {
 	/**
 	 * @api {get} api/user/id/:id Read data of a user
-	 * @apiName GetUser
+	 * @apiName Get User
 	 * @apiGroup User
 	 *
 	 * @apiParam {Number} id User unique ID.
@@ -50,7 +50,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {post} api/user Create a new user
-	 * @apiName CreateUser
+	 * @apiName Create User
 	 * @apiGroup User
 	 *
 	 * @apiParam {String} firstName First name of the User.
@@ -88,7 +88,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {put} api/user/id/:id Update a user
-	 * @apiName UpdateUser
+	 * @apiName Update User
 	 * @apiGroup User
 	 *
 	 * @apiParam {Number} id User unique ID.
@@ -124,7 +124,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {delete} api/user/id/:id Delete a user
-	 * @apiName DeleteUser
+	 * @apiName Delete User
 	 * @apiGroup User
 	 *
 	 * @apiParam {Number} id User unique ID.
@@ -154,7 +154,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {get} api/user Read data of all users
-	 * @apiName GetAllUsers
+	 * @apiName Get All Users
 	 * @apiGroup User
 	 *
 	 *
@@ -177,7 +177,7 @@ class API extends REST_Controller
 	
 	/**
 	 * @api {post} api/userByEmail Read data of a user searched by email
-	 * @apiName GetUserByEmail
+	 * @apiName Get User By Email
 	 * @apiGroup User
 	 *
 	 * @apiParam {String} email User unique email.
@@ -217,7 +217,7 @@ class API extends REST_Controller
 	
 	/**
 	 * @api {post} api/userByPassword Read data of a user searched by email and password
-	 * @apiName GetUserByPassword
+	 * @apiName Get User By Password
 	 * @apiGroup User
 	 *
 	 * @apiParam {String} email User unique email.
@@ -258,7 +258,7 @@ class API extends REST_Controller
 
 	/**
 	 * @api {get} api/category/id/:id Read data of a category
-	 * @apiName GetCategory
+	 * @apiName Get Category
 	 * @apiGroup Category
 	 *
 	 * @apiParam {Number} id Category unique ID.
@@ -296,7 +296,7 @@ class API extends REST_Controller
 
 	/**
 	 * @api {post} api/category Create a new category
-	 * @apiName CreateCategory
+	 * @apiName Create Category
 	 * @apiGroup Category
 	 *
 	 * @apiParam {Number} parentCategoryID Unique ID of the parent Category.
@@ -330,7 +330,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {put} api/category/id/:id Update a category
-	 * @apiName UpdateCategory
+	 * @apiName Update Category
 	 * @apiGroup Category
 	 *
 	 * @apiParam {Number} id Category unique ID.
@@ -366,7 +366,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {delete} api/category/id/:id Delete a category
-	 * @apiName DeleteCategory
+	 * @apiName Delete Category
 	 * @apiGroup Category
 	 *
 	 * @apiParam {Number} id Users unique ID.
@@ -396,7 +396,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {get} api/categories Read data of all categories
-	 * @apiName GetAllCategories
+	 * @apiName Get All Categories
 	 * @apiGroup Category
 	 *
 	 * @apiSuccess {Number} ID Category unique ID.
@@ -417,7 +417,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {get} api/resource/id/:id Read data of a community resource
-	 * @apiName GetResource
+	 * @apiName Get Resource
 	 * @apiGroup Resource
 	 *
 	 * @apiParam {Number} id Resource unique ID.
@@ -468,7 +468,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {post} api/resource Create a community resource
-	 * @apiName CreateResource
+	 * @apiName Create Resource
 	 * @apiGroup Resource
 	 *
 	 * @apiParam {Number} categoryID Category unique ID which the resource belongs to.
@@ -529,7 +529,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {put} api/resource/id/:id Update a community resource
-	 * @apiName UpdateResource
+	 * @apiName Update Resource
 	 * @apiGroup Resource
 	 *
 	 * @apiParam {Number} id Resource unique ID.
@@ -592,7 +592,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {delete} api/resource/id/:id Delete a community resource
-	 * @apiName DeleteResource
+	 * @apiName Delete Resource
 	 * @apiGroup Resource
 	 *
 	 * @apiParam {Number} id Resource unique ID.
@@ -622,7 +622,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {get} api/resources Read data of all community resources
-	 * @apiName GetAllResources
+	 * @apiName Get All Resources
 	 * @apiGroup Resource
 	 *
 	 * @apiSuccess {Number} ID Users unique ID.
@@ -656,7 +656,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {get} api/contact/id/:id Read data of a contact
-	 * @apiName GetContact
+	 * @apiName Get Contact
 	 * @apiGroup Contact
 	 *
 	 * @apiParam {Number} id Contact unique ID.
@@ -696,7 +696,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {post} api/contact Create a new contact
-	 * @apiName CreateContact
+	 * @apiName Create Contact
 	 * @apiGroup Contact
 	 *
 	 * @apiParam {Number} resourceID Resource unique ID which the contact belongs to.
@@ -734,7 +734,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {put} api/contact/id/:id Update a contact
-	 * @apiName UpdateContact
+	 * @apiName Update Contact
 	 * @apiGroup Contact
 	 *
 	 * @apiParam {Number} id Contact unique ID.
@@ -774,7 +774,7 @@ class API extends REST_Controller
     
 	/**
 	 * @api {delete} api/contact/id/:id Delete a contact
-	 * @apiName DeleteContact
+	 * @apiName Delete Contact
 	 * @apiGroup Contact
 	 *
 	 * @apiParam {Number} id Contact unique ID.
@@ -822,6 +822,38 @@ class API extends REST_Controller
         if($contacts)
         {
             $this->response($contacts, 200); // 200 being the HTTP response code
+        }
+    }
+	
+	/**
+	 * @api {get} api/contactsByResource/resourceID/:resourceID Read data of all contacts of a specified resource
+	 * @apiName Get All Contacts By Resource
+	 * @apiGroup Contact
+	 *
+	 * @apiSuccess {Number} ID Contact unique ID.
+	 * @apiSuccess {Number} resourceID Resource unique ID which the contact belongs to.
+	 * @apiSuccess {String} name Name of the contact.
+	 * @apiSuccess {String} email Email address of the contact.
+	 * @apiSuccess {String} phone Phone number of the contact.
+	 * @apiSuccess {String} description Description of the contact.
+	 * 
+	 */
+    function contactsByResource_get()
+    {
+        if(!$this->get('resourceID'))
+        {
+        	$this->response(NULL, 400);
+        }
+
+        $contacts = Contact::readByResourceID($this->get('resourceID'));
+    	
+        if($contacts)
+        {
+            $this->response($contacts, 200); // 200 being the HTTP response code
+        }
+        else
+        {
+            $this->response(array('error' => 'Contacts could not be found for resource'), 404);
         }
     }
 }

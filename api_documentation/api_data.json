@@ -3,7 +3,7 @@
     "type": "post",
     "url": "api/category",
     "title": "Create a new category",
-    "name": "CreateCategory",
+    "name": "Create_Category",
     "group": "Category",
     "parameter": {
       "fields": {
@@ -57,7 +57,7 @@
     "type": "delete",
     "url": "api/category/id/:id",
     "title": "Delete a category",
-    "name": "DeleteCategory",
+    "name": "Delete_Category",
     "group": "Category",
     "parameter": {
       "fields": {
@@ -97,7 +97,7 @@
     "type": "get",
     "url": "api/categories",
     "title": "Read data of all categories",
-    "name": "GetAllCategories",
+    "name": "Get_All_Categories",
     "group": "Category",
     "success": {
       "fields": {
@@ -140,7 +140,7 @@
     "type": "get",
     "url": "api/category/id/:id",
     "title": "Read data of a category",
-    "name": "GetCategory",
+    "name": "Get_Category",
     "group": "Category",
     "parameter": {
       "fields": {
@@ -205,7 +205,7 @@
     "type": "put",
     "url": "api/category/id/:id",
     "title": "Update a category",
-    "name": "UpdateCategory",
+    "name": "Update_Category",
     "group": "Category",
     "parameter": {
       "fields": {
@@ -266,7 +266,7 @@
     "type": "post",
     "url": "api/contact",
     "title": "Create a new contact",
-    "name": "CreateContact",
+    "name": "Create_Contact",
     "group": "Contact",
     "parameter": {
       "fields": {
@@ -334,7 +334,7 @@
     "type": "delete",
     "url": "api/contact/id/:id",
     "title": "Delete a contact",
-    "name": "DeleteContact",
+    "name": "Delete_Contact",
     "group": "Contact",
     "parameter": {
       "fields": {
@@ -429,9 +429,66 @@
   },
   {
     "type": "get",
+    "url": "api/contactsByResource/resourceID/:resourceID",
+    "title": "Read data of all contacts of a specified resource",
+    "name": "Get_All_Contacts_By_Resource",
+    "group": "Contact",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>Contact unique ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "field": "resourceID",
+            "optional": false,
+            "description": "<p>Resource unique ID which the contact belongs to.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "name",
+            "optional": false,
+            "description": "<p>Name of the contact.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>Email address of the contact.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "phone",
+            "optional": false,
+            "description": "<p>Phone number of the contact.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "field": "description",
+            "optional": false,
+            "description": "<p>Description of the contact.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./api.php"
+  },
+  {
+    "type": "get",
     "url": "api/contact/id/:id",
     "title": "Read data of a contact",
-    "name": "GetContact",
+    "name": "Get_Contact",
     "group": "Contact",
     "parameter": {
       "fields": {
@@ -510,7 +567,7 @@
     "type": "put",
     "url": "api/contact/id/:id",
     "title": "Update a contact",
-    "name": "UpdateContact",
+    "name": "Update_Contact",
     "group": "Contact",
     "parameter": {
       "fields": {
@@ -585,7 +642,7 @@
     "type": "post",
     "url": "api/resource",
     "title": "Create a community resource",
-    "name": "CreateResource",
+    "name": "Create_Resource",
     "group": "Resource",
     "parameter": {
       "fields": {
@@ -730,7 +787,7 @@
     "type": "delete",
     "url": "api/resource/id/:id",
     "title": "Delete a community resource",
-    "name": "DeleteResource",
+    "name": "Delete_Resource",
     "group": "Resource",
     "parameter": {
       "fields": {
@@ -770,7 +827,7 @@
     "type": "get",
     "url": "api/resources",
     "title": "Read data of all community resources",
-    "name": "GetAllResources",
+    "name": "Get_All_Resources",
     "group": "Resource",
     "success": {
       "fields": {
@@ -904,7 +961,7 @@
     "type": "get",
     "url": "api/resource/id/:id",
     "title": "Read data of a community resource",
-    "name": "GetResource",
+    "name": "Get_Resource",
     "group": "Resource",
     "parameter": {
       "fields": {
@@ -1060,7 +1117,7 @@
     "type": "put",
     "url": "api/resource/id/:id",
     "title": "Update a community resource",
-    "name": "UpdateResource",
+    "name": "Update_Resource",
     "group": "Resource",
     "parameter": {
       "fields": {
@@ -1212,7 +1269,7 @@
     "type": "post",
     "url": "api/user",
     "title": "Create a new user",
-    "name": "CreateUser",
+    "name": "Create_User",
     "group": "User",
     "parameter": {
       "fields": {
@@ -1280,7 +1337,7 @@
     "type": "delete",
     "url": "api/user/id/:id",
     "title": "Delete a user",
-    "name": "DeleteUser",
+    "name": "Delete_User",
     "group": "User",
     "parameter": {
       "fields": {
@@ -1320,7 +1377,7 @@
     "type": "get",
     "url": "api/user",
     "title": "Read data of all users",
-    "name": "GetAllUsers",
+    "name": "Get_All_Users",
     "group": "User",
     "success": {
       "fields": {
@@ -1370,7 +1427,7 @@
     "type": "get",
     "url": "api/user/id/:id",
     "title": "Read data of a user",
-    "name": "GetUser",
+    "name": "Get_User",
     "group": "User",
     "parameter": {
       "fields": {
@@ -1442,7 +1499,7 @@
     "type": "post",
     "url": "api/userByEmail",
     "title": "Read data of a user searched by email",
-    "name": "GetUserByEmail",
+    "name": "Get_User_By_Email",
     "group": "User",
     "parameter": {
       "fields": {
@@ -1514,7 +1571,7 @@
     "type": "post",
     "url": "api/userByPassword",
     "title": "Read data of a user searched by email and password",
-    "name": "GetUserByPassword",
+    "name": "Get_User_By_Password",
     "group": "User",
     "parameter": {
       "fields": {
@@ -1593,7 +1650,7 @@
     "type": "put",
     "url": "api/user/id/:id",
     "title": "Update a user",
-    "name": "UpdateUser",
+    "name": "Update_User",
     "group": "User",
     "parameter": {
       "fields": {

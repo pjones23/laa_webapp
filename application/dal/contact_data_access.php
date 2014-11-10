@@ -26,6 +26,14 @@ class ContactData {
 		return $query->result();
 	}
 	
+	function readByResourceID($resourceID) {
+		$this->load->database();
+		$this->db->where('resourceID', $resourceID);
+		$query = $this->db->get('Contact');
+		$this->db->close();
+		return $query->result();
+	}
+	
 	function readAll() {
 		$this->load->database();
 		$query = $this->db->get('Contact');
