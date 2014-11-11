@@ -19,7 +19,7 @@ class Contact {
 			$ID = $info->ID + 0; // add 0 to make it an integer
 			$resourceID = ($info->resourceID != NULL) ? ($info->resourceID + 0) : 0; // add 0 to make it an integer
 			$name = ($info->name != NULL) ? $info->name : "";
-			$email = ($info->name != NULL) ? $info->name : "";
+			$email = ($info->email != NULL) ? $info->email : "";
 			$phone = ($info->phone != NULL) ? $info->phone : "";
 			$description = ($info->description != NULL) ? $info->description : "";
 			$contact = array('ID' => $ID,
@@ -47,7 +47,7 @@ class Contact {
 				$ID = $info->ID + 0; // add 0 to make it an integer
 				$resourceID = ($info->resourceID != NULL) ? ($info->resourceID + 0) : 0; // add 0 to make it an integer
 				$name = ($info->name != NULL) ? $info->name : "";
-				$email = ($info->name != NULL) ? $info->name : "";
+				$email = ($info->email != NULL) ? $info->email : "";
 				$phone = ($info->phone != NULL) ? $info->phone : "";
 				$description = ($info->description != NULL) ? $info->description : "";
 				array_push($contacts, array('ID' => $ID,
@@ -75,7 +75,7 @@ class Contact {
 				$ID = $info->ID + 0; // add 0 to make it an integer
 				$resourceID = ($info->resourceID != NULL) ? ($info->resourceID + 0) : 0; // add 0 to make it an integer
 				$name = ($info->name != NULL) ? $info->name : "";
-				$email = ($info->name != NULL) ? $info->name : "";
+				$email = ($info->email != NULL) ? $info->email : "";
 				$phone = ($info->phone != NULL) ? $info->phone : "";
 				$description = ($info->description != NULL) ? $info->description : "";
 				array_push($contacts, array('ID' => $ID,
