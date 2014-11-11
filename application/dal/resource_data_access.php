@@ -82,6 +82,14 @@ class ResourceData {
 		$this->db->close();
 		return $affectRows;
 	}
+	
+	function readByCategory($categoryID) {
+		$this->load->database();
+		$this->db->where('categoryID', $categoryID);
+		$query = $this->db->get('Resource');
+		$this->db->close();
+		return $query->result();
+	}
 }
 
 ?>

@@ -653,6 +653,57 @@ class API extends REST_Controller
             $this->response($resources, 200); // 200 being the HTTP response code
         }
     }
+	
+	/**
+	 * @api {get} api/resourcesByCategory/categoryID/:categoryID Read data of community resources for a specified category
+	 * @apiName Get All Resources By Category
+	 * @apiGroup Resource
+	 *
+	 * @apiParam {Number} categoryID Category unique ID.
+	 *
+	 * @apiSuccess {Number} ID Users unique ID.
+	 * @apiSuccess {Number} categoryID Category unique ID which the resource belongs to.
+	 * @apiSuccess {String} name Name of the resource.
+	 * @apiSuccess {String} phone Phone number of the resource.
+	 * @apiSuccess {String} address Street address of the resource.
+	 * @apiSuccess {String} city City of the resource.
+	 * @apiSuccess {String} state State of the resource.
+	 * @apiSuccess {String} zip Zip code of the resource.
+	 * @apiSuccess {String} description Description of the resource.
+	 * @apiSuccess {String} serviceHours Service hours of the resource.
+	 * @apiSuccess {String} eligibility Eligibility requirements for the resource.
+	 * @apiSuccess {String} intakeProcedure Intake procedure of the resource.
+	 * @apiSuccess {String} documents Documents required by the resource.
+	 * @apiSuccess {String} fees Fees associated with the resource.
+	 * @apiSuccess {String} languages Languages supported by the resource.
+	 * @apiSuccess {String} services Services offered by the resource.
+	 * @apiSuccess {String} website Website of the resource.
+	 * 
+	 * @apiErrorExample Error-Response:
+	 *     HTTP/1.1 404 Not Found
+	 *     {
+	 *       "error": "Resource could not be found"
+	 *     }
+	 * 
+	 */
+    function resourcesByCategory_get()
+    {
+        if(!$this->get('categoryID'))
+        {
+        	$this->response(NULL, 400);
+        }
+
+        $resources = Resource::readAllByCategory($this->get('categoryID'));
+    	
+        if($resources)
+        {
+            $this->response($resources, 200); // 200 being the HTTP response code
+        }
+        else
+        {
+            $this->response(array('error' => 'Community resources could not be found for category'), 404);
+        }
+    }
     
 	/**
 	 * @api {get} api/contact/id/:id Read data of a contact
@@ -829,6 +880,8 @@ class API extends REST_Controller
 	 * @api {get} api/contactsByResource/resourceID/:resourceID Read data of all contacts of a specified resource
 	 * @apiName Get All Contacts By Resource
 	 * @apiGroup Contact
+	 * 
+	 * @apiParam {Number} resourceID Resource unique ID.
 	 *
 	 * @apiSuccess {Number} ID Contact unique ID.
 	 * @apiSuccess {Number} resourceID Resource unique ID which the contact belongs to.
