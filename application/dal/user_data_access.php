@@ -28,6 +28,8 @@ class UserData {
 	
 	function readAll() {
 		$this->load->database();
+		$this->db->order_by("firstName", "asc");
+		$this->db->order_by("lastName", "asc");
 		$query = $this->db->get('User');
 		$this->db->close();
 		return $query->result();

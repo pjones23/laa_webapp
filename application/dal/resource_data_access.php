@@ -40,6 +40,7 @@ class ResourceData {
 	
 	function readAll() {
 		$this->load->database();
+		$this->db->order_by("name", "asc");
 		$query = $this->db->get('Resource');
 		$this->db->close();
 		return $query->result();
@@ -86,6 +87,7 @@ class ResourceData {
 	function readByCategory($categoryID) {
 		$this->load->database();
 		$this->db->where('categoryID', $categoryID);
+		$this->db->order_by("name", "asc");
 		$query = $this->db->get('Resource');
 		$this->db->close();
 		return $query->result();

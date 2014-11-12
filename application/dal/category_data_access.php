@@ -26,6 +26,7 @@ class CategoryData {
 	
 	function readAll() {
 		$this->load->database();
+		$this->db->order_by("name", "asc");
 		$query = $this->db->get('Category');
 		$this->db->close();
 		return $query->result();

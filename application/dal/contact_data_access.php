@@ -29,6 +29,7 @@ class ContactData {
 	function readByResourceID($resourceID) {
 		$this->load->database();
 		$this->db->where('resourceID', $resourceID);
+		$this->db->order_by("name", "asc");
 		$query = $this->db->get('Contact');
 		$this->db->close();
 		return $query->result();
@@ -36,6 +37,7 @@ class ContactData {
 	
 	function readAll() {
 		$this->load->database();
+		$this->db->order_by("name", "asc");
 		$query = $this->db->get('Contact');
 		$this->db->close();
 		return $query->result();
